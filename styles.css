@@ -1,0 +1,386 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: background-color 0.5s ease;
+  z-index: 1000;
+}
+.logo{
+  cursor:default;
+}
+
+.container {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nav {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  transition: height 0.5s ease;
+}
+.hamburger{
+  background-color: transparent;
+  border: 0;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 100000000;
+  display: none;
+  
+}
+.hamburger:focus{
+  outline: none;
+
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.nav .logo {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin-right: auto;
+  margin-left: 4rem;
+  
+}
+.show{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  max-width: 200px;
+ 
+}
+
+.nav-link {
+  margin: 0 2rem;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+#nav-cta {
+  display: inline-block;
+  background-color: #fff;
+  color: #313131;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  transition: background-color 0.5s ease;
+}
+
+#nav-cta:hover {
+  background-color: #d3d3d3;
+}
+
+/*Apply styles after scroll*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.scrolling-active {
+  background-color: #fff;
+  box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+}
+
+.scrolling-active .nav {
+  height: 6.6rem;
+}
+
+.scrolling-active .nav a {
+  color: #313131;
+}
+
+.scrolling-active #nav-cta {
+  background-color: #313131;
+  color: #fff;
+}
+
+.scrolling-active #nav-cta:hover {
+  background-color: #151515;
+}
+
+.scrolling-active .nav-link::after {
+  background-color: #313131;
+}
+
+/*Apply styles after scroll end*/
+
+/* front Content*/
+.front {
+  width: 100%;
+  height: 100vh;
+  background: url("sad.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.front::after {
+  content: "";
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* front end*/
+
+/* About start*/
+.content1 {
+  width: 100%;
+}
+.content1 img {
+  height: 80%;
+
+  margin: 10px;
+}
+.about {
+  background: rgb(44, 43, 43);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.about h1 {
+  color: whitesmoke;
+  font-size: 40px;
+  font-family: "Pacifico", cursive;
+}
+
+p {
+  margin: 10px;
+  font-size: clamp(16px,3vw,35px);
+  max-width: 50%;
+}
+.text {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.text img {
+  height: 50vh;
+}
+.foto_about img {
+  height: 50vh;
+}
+/* About end */
+
+/* Gallery start */
+.Gallery {
+  width: 100%;
+}
+.gallery-header {
+  background: rgb(44, 43, 43);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-family: "Pacifico";
+}
+.gallery-header h1 {
+  color: whitesmoke;
+  font-size: 38px;
+}
+.Gallery_bg {
+  background: url("mountain-large.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+height: 100%;
+ 
+  
+}
+
+.fotos img {
+  height: 50vh;
+  border: 2px solid black;
+  margin: 4px;
+}
+.fotos {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+.fotos img:hover {
+  transform: scale(1.5);
+  transition:.4s;
+
+}
+/* Gallery end */
+
+/* Contact start */
+.contact {
+  width: 100%;
+  background: black;
+}
+.contact_header {
+  background: rgb(44, 43, 43);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-family: "Pacifico";
+}
+.contact_header h1 {
+  color: whitesmoke;
+  font-size: 38px;
+}
+.contact_bg{
+  background: black;
+  display: flex;
+  flex-direction: column;
+}
+.contact_bg p{
+  color: white;
+  margin:10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.contact_bg i{
+  margin:5px;
+}
+
+/* Contact end */
+
+/* footer start */
+footer {
+  width: 100%;
+  background: #23272a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ 
+}
+footer p{
+  color: whitesmoke;
+  font-size: 38px;
+  font-family: "Pacifico";
+  margin: 0;
+}
+footer i {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+#fb:hover{
+  color: rgb(48, 96, 192);
+}
+#ig:hover{
+  color: rgb(242, 80, 80);
+}
+#yt:hover{
+  color: red;
+}
+#twt:hover{
+  color: rgb(87, 193, 228);
+}
+.cos{
+  display: none;
+}
+
+/* footer end */
+
+@media all and (max-width:767px){
+  html{
+    overflow-x: hidden;
+  }
+  .nav-list{
+    display: none;
+  }
+  
+  .hamburger{
+    display: block;
+    color: black;
+  }
+  .logo{
+
+    text-align: right;
+  }
+  
+  .second_nav ul{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    
+  }
+  .second_nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    
+  }
+  
+  .foto_about img{
+    height: 250px;
+  }
+}
